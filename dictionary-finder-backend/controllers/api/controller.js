@@ -24,7 +24,7 @@ controller.wordlist = (req, res) =>{
 controller.synonyms = (req, res) =>{
   axios({
     method: 'get',
-    url: `https://od-api.oxforddictionaries.com/api/v1/entries/en/${req.body.word}/synonyms`,
+    url: `https://od-api.oxforddictionaries.com/api/v1/entries/en/${req.body.match}/synonyms`,
     headers: {
       "app_id": process.env.DICTIONARY_APP_SECRET,
       "app_key": process.env.DICTIONARY_API_KEY
