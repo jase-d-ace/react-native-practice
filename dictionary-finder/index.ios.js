@@ -6,6 +6,7 @@ import Result from './Result';
 import NoData from './NoDataYet';
 import NoResult from './NoResult';
 import NavTest from './NavTest';
+import Styles from './Style';
 
 class App extends React.Component {
 
@@ -73,11 +74,11 @@ class App extends React.Component {
     //add in navigate prop to enable navigation between screens
     const { navigate } = this.props.navigation
     return (
-      <View style={styles.container}>
-        <Text style={styles.header}>Wordlist Search</Text>
+      <View style={Styles.container}>
+        <Text style={Styles.header}>Wordlist Search</Text>
         <Text>You searched for: {this.state.wordlist}</Text>
         <Text>
-        <TextInput style={styles.textField} placeholder='what is happening' onChangeText={(text) => this.setStateToThis(text)} />
+        <TextInput style={Styles.textField} placeholder='what is happening' onChangeText={(text) => this.setStateToThis(text)} />
         </Text>
         <ScrollView>
         {this.renderInfo()}
@@ -95,23 +96,6 @@ const dictionaryfinder = StackNavigator({
   Test: { screen: NavTest }
 })
 
-const styles = StyleSheet.create({
-  textField: {
-    backgroundColor: 'rebeccapurple',
-    width: '200%',
-    height: '40%'
-  },
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  header: {
-    fontSize: 50,
-    fontWeight: '900'
-  }
-});
 
 
 AppRegistry.registerComponent('dictionaryfinder', () => dictionaryfinder);
